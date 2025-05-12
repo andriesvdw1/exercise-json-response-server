@@ -45,10 +45,15 @@ const requestListener = function (request, response) {
   if (request.url === "/json") {
     response.writeHead(200, { "Content-Type": "application/json" });
     response.end(JSON.stringify(jsonArr));
-  } else {
+  }
+   else if (request.url === "/") {
     // the default text to show
     response.writeHead(200);
-    response.end("My personal server!");
+    response.end("<h1>My personal server!</h1>");
+  }
+  else{
+    response.writeHead(200);
+    response.end("<h1>404 requested page not found!</h1> ");
   }
 };
 
