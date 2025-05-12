@@ -5,10 +5,12 @@ const port = 8000;
 
 const jsonArr = [
   {
+    "id" : 1,
     "name": "Jan",
     "surname": "Strydom"
   },
   {
+    "id" : 2,
     "name": "Samantha",
     "surname": "Stroud"
   }
