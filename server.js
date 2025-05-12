@@ -1,12 +1,31 @@
-let http = require("http");
+const http = require("http");
+
 const host = "localhost";
 const port = 8000;
 
+const jsonArr = [
+  {
+    "name": "Jan",
+    "surname": "Strydom"
+  },
+  {
+    "name": "Samantha",
+    "surname": "Stroud"
+  }
+];
+
 const requestListener = function (request, response) {
- response.writeHead(200);
- response.end("My first server!");
-}
+  if (request.url === "/json") {
+    response.writeHead(200, { "Content-Type": "application/json" });
+    response.end(JSON.stringify(jsonArr));
+  } else {
+    response.writeHead(200);
+    response.end("My first server!");
+  }
+};
 
+const server = http.createServer(requestListener);
 
-
-
+server.listen(port, host, () => {
+  console.log(`Server running at http://${host}:${port}/`);
+});
