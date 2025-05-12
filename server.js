@@ -49,11 +49,11 @@ const requestListener = function (request, response) {
    else if (request.url === "/") {
     // the default text to show
     response.writeHead(200);
-    response.end("<h1>My personal server!</h1>");
+    response.end("<style>h1{color: lime} body{background-color: black}</style><h1>My personal server!</h1>");
   }
   else{
     response.writeHead(200);
-    response.end("<h1>404 requested page not found!</h1> ");
+    response.end("<style>h1{color: red} body{background-color: black}</style><h1>404 requested page not found!</h1> ");
   }
 };
 
