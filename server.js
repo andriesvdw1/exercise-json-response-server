@@ -1,8 +1,8 @@
-const http = require("http");
+const http = require("http"); // Remembering to not use import, use require instead
+const host = "localhost"; // Developing the server on ip address 127.0.0.1
+const port = 8000; // Using the port usually used either 8000 or 8080 
 
-const host = "localhost";
-const port = 8000;
-
+// Create some interesting fruit name array to display when requested using the /json url
 const jsonArr = [
   {
     "id" : 1,
@@ -39,18 +39,23 @@ const jsonArr = [
 
 ];
 
+// Create a requestListener 
 const requestListener = function (request, response) {
+  //Add logic to display different content based on the url the user enters in the browser
   if (request.url === "/json") {
     response.writeHead(200, { "Content-Type": "application/json" });
     response.end(JSON.stringify(jsonArr));
   } else {
+    // the default text to show
     response.writeHead(200);
-    response.end("My first server!");
+    response.end("My personal server!");
   }
 };
 
+// Create an http server using the requestListener that was previously defined
 const server = http.createServer(requestListener);
 
+// Start the server on the specified port and ip address previously defined
 server.listen(port, host, () => {
   console.log(`Server running at http://${host}:${port}/`);
 });
