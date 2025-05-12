@@ -6,14 +6,37 @@ const port = 8000;
 const jsonArr = [
   {
     "id" : 1,
-    "name": "Jan",
-    "surname": "Strydom"
+    "name": "Durian"
   },
   {
     "id" : 2,
-    "name": "Samantha",
-    "surname": "Stroud"
-  }
+    "name": "Rambutan"
+  },
+  {
+    "id" : 3,
+    "name": "Jackfruit"
+  },
+  {
+    "id" : 4,
+    "name": "Mangosteen"
+  },
+  {
+    "id" : 5,
+    "name": "Pitaya"
+  },
+  {
+    "id" : 6,
+    "name": "Carambola"
+  },
+  {
+    "id" : 7,
+    "name": "Lychee"
+  },
+  {
+    "id" : 8,
+    "name": "Jabuticaba"
+  },
+
 ];
 
 const requestListener = function (request, response) {
